@@ -1,14 +1,14 @@
-import React from "react";
+import "./styles.css";
 
-export default function PostCard({ post }) {
+export default function PostCard({ title, cover, body, id }) {
   return (
-    <div className="PostCard">
-      <div className="post">
-        <img src={post.cover} alt={post.title} />
-        <div className="post-card">
-          <h2>{post.title}</h2>
-          <p>{post.body}</p>
-        </div>
+    <div className="post">
+      <img src={cover} alt={title} />
+      <div className="post-content">
+        <h2>
+          {title} {id}
+        </h2>
+        <p>{body}</p>
       </div>
     </div>
   );

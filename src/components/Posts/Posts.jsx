@@ -1,16 +1,20 @@
 import React from "react";
+import PostCard from "../PostCard/PostCard";
 
 import "./styles.css";
 
-import PostCard from "../PostCard/PostCard";
-export default function Posts({ posts }) {
+export default function Posts({ posts = [] }) {
   return (
-    <div>
-      <div className="posts">
-        {posts.map((post) => (
-          <PostCard key={post.id} post={post} />
-        ))}
-      </div>
+    <div className="posts">
+      {posts.map((post) => (
+        <PostCard
+          key={post.id}
+          title={post.title}
+          body={post.body}
+          id={post.id}
+          cover={post.cover}
+        />
+      ))}
     </div>
   );
 }
